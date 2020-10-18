@@ -48,7 +48,7 @@ This node takes in data from the /image_color, /current_pose, and /base_waypoint
 This is the SSD (Single Shot Detection) architecture used for object detection.
 
 <p align="center">
-  <img src="./images_result/ssd_v2.jpeg.png" />
+  <img src="./images_result/ssd_v2.jpeg" />
 </p>
 
 More inforfation about the [Single Shot Detection architecture can be found here](https://arxiv.org/abs/1512.00567).
