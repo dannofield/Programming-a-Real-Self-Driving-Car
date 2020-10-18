@@ -50,6 +50,7 @@ This is the SSD (Single Shot Detection) architecture used for object detection.
 <p align="center">
   <img src="./images_result/ssd_v2.jpeg" />
 </p>
+<em>Towards Data Science. "SSD Architecture" TowardsDataScience.com</em>
 
 More inforfation about the [Single Shot Detection architecture can be found here](https://arxiv.org/abs/1512.00567).
 
