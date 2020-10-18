@@ -2,13 +2,13 @@
 
 [//]: # (Image References)
 
-<p align="center">
-  <img src="./images_result/final-project-ros-graph-v2.png" />
-</p>
-
 
 <p align="center">
   <img src="./images_result/header.jpeg" />
+</p>
+
+<p align="center">
+  <img src="./images_result/final-project-ros-graph-v2.png" />
 </p>
 
 
