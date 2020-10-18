@@ -52,6 +52,7 @@ This is the SSD (Single Shot Detection) architecture used for object detection.
 </p>
 
 More inforfation about the [Single Shot Detection architecture can be found here](https://arxiv.org/abs/1512.00567).
+
 Also, Udacity Lab repo can be found here (CarND Object Detection Lab)[https://github.com/udacity/CarND-Object-Detection-Lab]
 
 <p align="center">
