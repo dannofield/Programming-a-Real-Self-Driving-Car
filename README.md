@@ -28,6 +28,8 @@ The /base_waypoints topic publishes a list of all waypoints for the track, so th
 
 This package contains the waypoint updater node: waypoint_updater.py. The purpose of this node is to update the target velocity property of each waypoint based on traffic light and obstacle detection data. This node will subscribe to the /base_waypoints, /current_pose, /obstacle_waypoint, and /traffic_waypoint topics, and publish a list of waypoints ahead of the car with target velocities to the /final_waypoints topic.
 
+After we have loaded all the waypoints we will start publishing all these points to the waypoint_follower along with messages to the/twist_cmd topic. This node has a PID controller that is called from the dbw_node to create commands like accelerating, brake, turn, or stop. 
+
 <p align="center">
   <img src="./images_result/pidControl.png" />
 </p>
@@ -40,11 +42,17 @@ This package contains the waypoint updater node: waypoint_updater.py. The purpos
 
 This node takes in data from the /image_color, /current_pose, and /base_waypoints topics and publishes the locations to stop for red traffic lights to the /traffic_waypoint topic. 
 
+The topic /vehicle/traffic_lights contains the exact location and status of all traffic lights in the simulator. After we have correctly identified the traffic light and determined its position, we convert it to a waypoint index and publish it.
+
 <p align="center">
   <img src="./images_result/lightdetection.png" />
 </p>
 
 ### Object Detection
+We can use the camera image data to classify the color of the traffic light. The core functionality of this step takes place in the get_light_state method of tl_detector.py. 
+There are a number of approaches we could take for this task. One of the simpler approaches is to train a deep learning classifier to classify the entire image as containing either a red light, yellow light, green light, or no light. One resource that was available to us is the traffic light's position in 3D space via the vehicle/traffic_lights topic.
+Note that the code to publish the results of process_traffic_lights is written in the image_cb method.
+
 This is the SSD (Single Shot Detection) architecture used for object detection.
 
 <p align="center">
